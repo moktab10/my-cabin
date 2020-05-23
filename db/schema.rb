@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_125338) do
+ActiveRecord::Schema.define(version: 2020_05_23_135822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cabins", force: :cascade do |t|
+    t.string "localisation"
+    t.string "theme"
+    t.string "title"
+    t.string "description"
+    t.string "photo"
+    t.integer "price_per_night"
+    t.integer "beds"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cabins_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +43,5 @@ ActiveRecord::Schema.define(version: 2020_05_23_125338) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cabins", "users"
 end
