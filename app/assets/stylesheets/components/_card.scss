@@ -1,4 +1,3 @@
-
 .card-category {
   background-size: cover;
   background-position: center;
@@ -23,4 +22,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px
+}
+
+.card-form {
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 70px 35px 35px 35px;
+}
+
+.title-add {
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
 }

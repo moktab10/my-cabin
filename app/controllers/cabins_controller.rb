@@ -29,6 +29,6 @@ class CabinsController < ApplicationController
   private
 
   def cabin_params
-    params.require(:cabin).permit(:title, :description, :localisation, :price_per_night, :beds)
+    params.require(:cabin).permit(:title, :description, :localisation, :price_per_night, :beds, photos: [])
   end
 end
