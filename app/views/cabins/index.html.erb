@@ -1,14 +1,15 @@
-<div class="container mt-5 mb-5">
-  <div class="grid-css">
+
+  <div class="cards-grid">
     <% @cabins.each do |cabin| %>
-    <%= link_to cabin_path(cabin) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80)">
-      <%= cabin.title %>
+    <%= link_to cabin_path(cabin.id) do %>
+    <div class="card-cabin">
+      <div class="card-cabin-image">
+        <%= image_tag cabin.photos.first, height: 300, width: 400, crop: :fill %>
+        <h4 class="card-cabin-price"><%= cabin.price_per_night %> €</h4>
+      </div>
+      <h5 class="card-cabin-localisation"><%= cabin.localisation %></h5>
     </div>
     <% end %>
     <% end %>
   </div>
-</div>
-<% @cabin.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
