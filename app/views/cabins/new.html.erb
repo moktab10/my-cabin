@@ -1,11 +1,19 @@
-<div class="container mt-5">
-  <%= simple_form_for @cabin do |f| %>
-  <%= f.input :title, input_html: { class: 'form-control'} %>
-  <%= f.input :description, input_html: { class: 'form-control'} %>
-  <%= f.input :localisation, input_html: { class: 'form-control'} %>
-  <%= f.input :beds, input_html: { class: 'form-control'} %>
-  <%= f.input :price_per_night, input_html: { class: 'form-control'} %>
-  <%= f.submit "Submit", class: "btn btn-outline-success show-button" %>
-  <% end %>
-  <%= button_to "Back", cabins_path, :method => "get", class: "btn btn-outline-success show-button" %>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4 col-offset-4 text-center card-form">
+    <h3 class="title-add">Ajouter une nouvelle cabane</h3>
+    <%= simple_form_for @cabin do |f| %>
+    <%= f.input :title, input_html: { autocomplete: "Title" }, class: "form-control", placeholder: "Titre", label: false %>
+    <%= f.input :description, input_html: { autocomplete: "Description" }, class: "form-control", placeholder: "Description", label: false %>
+    <%= f.input :localisation, input_html: { autocomplete: "Localisation" }, class: "form-control", placeholder: "Localisation", label: false %>
+    <%= f.input :beds, input_html: { autocomplete: "First name" }, class: "form-control", placeholder: "Lits", label: false %>
+    <%= f.input :price_per_night, input_html: { autocomplete: "Price per night" }, class: "form-control", placeholder: "Prix / nuit", label: false %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control", placeholder: "Photos", label: false %>
+    <div class="form-actions">
+      <%= f.submit "Submit", class: "btn btn-success mb-3 submit" %>
+    </div>
+    <% end %>
+    <div class="form-actions">
+      <%= button_to "Back", cabins_path, :method => "get", class: "btn btn-success back" %>
+    </div>
+  </div>
 </div>
