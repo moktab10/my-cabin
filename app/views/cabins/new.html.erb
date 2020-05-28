@@ -7,7 +7,7 @@
     <%= f.input :localisation, input_html: { autocomplete: "Localisation" }, class: "form-control", placeholder: "Localisation", label: false %>
     <%= f.input :beds, input_html: { autocomplete: "First name" }, class: "form-control", placeholder: "Lits", label: false %>
     <%= f.input :price_per_night, input_html: { autocomplete: "Price per night" }, class: "form-control", placeholder: "Prix / nuit", label: false %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true, autocomplete: "photos" }, class: "form-control", placeholder: "Photos", label: false %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control", placeholder: "Photos", label: false %>
     <div class="form-actions">
       <%= f.submit "Submit", class: "btn btn-success mb-3 submit" %>
     </div>
