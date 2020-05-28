@@ -1,14 +1,33 @@
 <div class="container">
   <h1><%= @cabin.title %></h1>
+   <!-- <div class="d-flex justify-content-center">
+  </div>  -->
 
   <!-- caroussel de photos -->
 
-  <div class="text-left">
-    <ul>
-      <li><%= @cabin.description %></li>
-      <li><%= @cabin.localisation %></li>
-      <li><%= @cabin.price_per_night %></li>
-      <li><%= @cabin.beds %></li>
-    </ul>
+  <div class="container d-flex justify-content-around">
+    <div class="d-flex flex-column">
+      <div class="">
+        <ul>
+          <li><%= @cabin.description %></li>
+          <li><%= @cabin.localisation %></li>
+        </ul>
+      </div>
+      <div class="">
+        <ul>
+          <li><%= @cabin.price_per_night %></li>
+          <li><%= @cabin.beds %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+      <div>
+        <input type="date" name="arrivée">
+      </div>
+      <div>
+        <input type="date" name="départ">
+      </div>
+
+    </div>
   </div>
 </div>
