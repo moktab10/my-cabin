@@ -1,19 +1,13 @@
 .alert {
-  position: fixed;
-  top: 66px;
+  margin: 0;
   text-align: center;
-  width: 100%;
-  z-index: 1000;
-}
-
-.alert-info {
-  background-color: green;
   color: white;
+}
+.alert-info {
+  background: $green;
   border: none;
 }
-
 .alert-warning {
-  background-color: red;
-  color: white;
+  background: $red;
   border: none;
 }

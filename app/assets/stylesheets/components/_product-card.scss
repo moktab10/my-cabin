@@ -5,14 +5,14 @@
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip:hover {
 filter: contrast(70%);
--webkit-filter: contrast(70%);
+-webkit-filter: contrast(80%);
 }
 
 
@@ -48,4 +48,19 @@ filter: contrast(70%);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.index-link {
+  text-decoration: none !important;
+  color: black;
+}
+
+.index-link:hover {
+  text-decoration: none !important;
+  color: black;
+}
+
+#green-title {
+  color: #1EDD88;
+  font-weight: bold;
 }
