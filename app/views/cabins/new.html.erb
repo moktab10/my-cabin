@@ -9,11 +9,11 @@
     <%= f.input :price_per_night, input_html: { autocomplete: "Price per night" }, class: "form-control", placeholder: "Prix / nuit", label: false %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control", placeholder: "Photos", label: false %>
     <div class="form-actions">
-      <%= f.submit "Submit", class: "btn btn-success mb-3 submit" %>
+      <%= f.submit "Ajouter une cabane", class: "btn btn-success mb-3 submit" %>
     </div>
     <% end %>
     <div class="form-actions">
-      <%= button_to "Back", cabins_path, :method => "get", class: "btn btn-success back" %>
+      <%= button_to "Retour", cabins_path, :method => "get", class: "btn btn-success back" %>
     </div>
   </div>
 </div>

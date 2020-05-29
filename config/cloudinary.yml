@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: djwksgwyd
+  api_key: '267577928673515'
+  api_secret: u6K0ghsWTo9lBbPFjgkt26weT2M
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: djwksgwyd
+  api_key: '267577928673515'
+  api_secret: u6K0ghsWTo9lBbPFjgkt26weT2M
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: djwksgwyd
+  api_key: '267577928673515'
+  api_secret: u6K0ghsWTo9lBbPFjgkt26weT2M
+  enhance_image_tag: true
+  static_file_support: false
