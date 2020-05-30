@@ -19,40 +19,47 @@
 <div class="container text-center mt-5">
   <i>Nos coups de coeur perchés <i class="fas fa-heart mb-5"></i></i>
   <div class="cards">
+    <% @cabins.each do |cabin| %>
     <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1509441857563-d2b146b3a408?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" />
+      <div id="carouselExampleControls<%= cabin.id %>" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <%= link_to cabin_path(cabin), class: "index-link" do %>
+          <% cabin.photos.each do |photo| %>
+          <% if photo == cabin.photos.first %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
       <div class="card-trip-infos">
         <div class="text-left">
-          <h2>La Cabine de Magalie</h2>
-          <p>Perchée au sommet</p>
+          <h4 id="green-title"><%= cabin.title.capitalize %></h4>
+          <h6><%= cabin.localisation %></h6>
+          <h6><%= cabin.beds %> x <i class="fas fa-bed"></i></h6>
         </div>
-        <h2 class="card-trip-pricing">4 lits / 109.99€</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/Magalie13" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-trip-infos">
-        <div class="text-left">
-          <h2>La Cabine de Mokhtar</h2>
-          <p>Un petit coin de paradis</p>
+        <div>
+          <h6 class="card-trip-pricing"><%= cabin.price_per_night %> € / <i class="fas fa-moon"></i></h6>
         </div>
-        <h2 class="card-trip-pricing">6 lits / 79.99€</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/moktab10" class="card-trip-user avatar-bordered" />
       </div>
+      <% end %>
     </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1542318419-d500cb6a3da3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-trip-infos">
-        <div class="text-left">
-          <h2>La Cabine de Vincent</h2>
-          <p>Offrez un week-end à votre moineau</p>
-        </div>
-        <h2 class="card-trip-pricing"> 2 lits / 9.99€</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/vincentbizet" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
-  </div>
+    <% end %>
+</div>
 
 
   <p class="my-5"><i>Pour vous inspirer ...</i></p>
