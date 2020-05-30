@@ -1,6 +1,14 @@
 class CabinsController < ApplicationController
   def index
-    @cabins = Cabin.all
+    @cabins = Cabin.geocoded
+
+    @markers = @cabins.map do |cabin|
+      {
+        lat: cabin.latitude,
+        lng: cabin.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
+      }
+    end
   end
 
   def new
