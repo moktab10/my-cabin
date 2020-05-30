@@ -1,31 +1,64 @@
 <div class="container">
   <h1><%= @cabin.title %></h1>
-   <!-- <div class="d-flex justify-content-center">
-  </div>  -->
+
+
+  <div id="demo" class="carousel slide margin: auto data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "cabin1.jpg", alt: "cabane", width: "1100", height: "500" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "cabin2.jpg", alt: "cabane", width: "1100", height: "500" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "cabin3.jpg", alt: "cabane", width: "1100", height: "500" %>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
 
   <!-- caroussel de photos -->
 
-  <div class="container d-flex justify-content-around">
-    <div class="d-flex flex-column">
-      <div class="">
-        <ul>
+  <div class="container d-flex justify-content-between margin: auto">
+    <div class="container d-flex flex-column">
+      <div class=" border-bottom border-width: 1px boder-style: solid border-color: black">
+        <ul class="list-style-type: none">
           <li><%= @cabin.description %></li>
           <li><%= @cabin.localisation %></li>
         </ul>
       </div>
-      <div class="">
+      <div class=" border-bottom border-width: 1px boder-style: solid border-color: black">
         <ul>
           <li><%= @cabin.price_per_night %></li>
           <li><%= @cabin.beds %></li>
         </ul>
       </div>
     </div>
-    <div class="container d-flex justify-content-center">
-      <div>
-        <input type="date" name="arrivée">
+    <div class="container d-flex border-radius: 4px box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);">
+      <div class="d-flex flex-column position: sticky">
+        <label for="date_arrivee">Arivée</label>
+        <input type="date" name="arrivée" id="date_arrivee">
       </div>
-      <div>
-        <input type="date" name="départ">
+      <div class="d-flex flex-column">
+        <label for="date_depart">Départ</label>
+        <input type="date" name="départ" id="date_depart">
       </div>
 
     </div>
