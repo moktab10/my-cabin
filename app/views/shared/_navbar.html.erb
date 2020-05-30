@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <p class="fullname_nav"> <%= current_user.first_name.capitalize %> <%= current_user.last_name.upcase %></p> <%= image_tag current_user.avatar.url(:thumb), size: "40", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <p class="fullname_nav"> <%= current_user.first_name.capitalize %> <%= current_user.last_name.upcase %></p> <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, size: "40", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Voir toutes les cabanes", cabins_path, class: "dropdown-item" %>
             <%= link_to "Ajouter une cabane", new_cabin_path, class: "dropdown-item" %>
