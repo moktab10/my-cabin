@@ -2,9 +2,30 @@
   <h1>Les Cabanes</h1>
   <div class="cards">
     <% @cabins.each do |cabin| %>
-    <%= link_to cabin_path(cabin), class: "index-link" do %>
     <div class="card-trip">
-      <%= cl_image_tag cabin.photos.first.key, height: 300, width: 350, crop: :fill %>
+      <div id="carouselExampleControls<%= cabin.id %>" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <% cabin.photos.each do |photo| %>
+          <% if photo == cabin.photos.first %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
       <div class="card-trip-infos">
         <div class="text-left">
           <h4 id="green-title"><%= cabin.title.capitalize %></h4>
@@ -16,7 +37,6 @@
         </div>
       </div>
     </div>
-    <% end %>
     <% end %>
   </div>
 </div>
