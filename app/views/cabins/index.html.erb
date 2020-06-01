@@ -1,5 +1,5 @@
 <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 400px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
  </div>
@@ -15,11 +15,11 @@
           <% cabin.photos.each do |photo| %>
           <% if photo == cabin.photos.first %>
           <div class="carousel-item active">
-            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+            <%= cl_image_tag photo.key, height: 220, width: 350, crop: :fill, class: "d-block w-100" %>
           </div>
           <% else %>
           <div class="carousel-item">
-            <%= cl_image_tag photo.key, height: 300, width: 350, crop: :fill, class: "d-block w-100" %>
+            <%= cl_image_tag photo.key, height: 220, width: 350, crop: :fill, class: "d-block w-100" %>
           </div>
           <% end %>
           <% end %>
@@ -38,10 +38,10 @@
         <div class="text-left">
           <h4 id="green-title"><%= cabin.title.capitalize %></h4>
           <h6><%= cabin.localisation %></h6>
-          <h6><%= cabin.beds %> x <i class="fas fa-bed"></i></h6>
         </div>
-        <div>
-          <h6 class="card-trip-pricing"><%= cabin.price_per_night %> € / <i class="fas fa-moon"></i></h6>
+        <div class="price-bed">
+          <h6><%= cabin.beds %> x <i class="fas fa-bed"></i></h6>
+          <h6><%= cabin.price_per_night %> € / <i class="fas fa-moon"></i></h6>
         </div>
       </div>
       <% end %>
