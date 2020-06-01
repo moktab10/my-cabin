@@ -31,10 +31,11 @@ filter: contrast(95%);
 
 .card-trip .card-trip-infos {
   padding: 16px;
+}
+
+.price-bed {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
 .card-trip-infos .card-trip-user {
@@ -64,3 +65,4 @@ filter: contrast(95%);
   color: #1EDD88;
   font-weight: bold;
 }
+
