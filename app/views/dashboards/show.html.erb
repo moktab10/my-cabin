@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Mes cabines</h1>
+  <% @cabins.each do |cabin| %>
+    <%= cabin.title %>
+    <%= cabin.localisation %>
+  <% end %>
+</div>
