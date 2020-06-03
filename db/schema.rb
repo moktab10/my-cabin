@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_115554) do
+ActiveRecord::Schema.define(version: 2020_06_03_191514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_05_30_115554) do
     t.date "start_date"
     t.date "end_date"
     t.integer "number_of_guests"
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "user_id", null: false
     t.bigint "cabin_id", null: false
     t.datetime "created_at", precision: 6, null: false
