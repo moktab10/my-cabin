@@ -3,16 +3,10 @@ class CabinsController < ApplicationController
   def index
     if params[:query].present?
       @cabins = Cabin.geocoded.where("localisation ILIKE ?", "%#{params[:query]}%")
-
-      @markers = @cabins.map do |cabin|
-        {
-          lat: cabin.latitude,
-          lng: cabin.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
-        }
-      end
+      markers_cabins
     else
       @cabins = Cabin.geocoded
+      markers_cabins
     end
   end
 
@@ -44,5 +38,15 @@ class CabinsController < ApplicationController
 
   def cabin_params
     params.require(:cabin).permit(:title, :description, :localisation, :price_per_night, :beds, photos: [])
+  end
+
+  def markers_cabins
+    @markers = @cabins.map do |cabin|
+        {
+          lat: cabin.latitude,
+          lng: cabin.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
+        }
+      end
   end
 end
