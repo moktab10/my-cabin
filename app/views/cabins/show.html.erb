@@ -35,18 +35,9 @@
           <li><i class="fas fa-ellipsis-h"></i> <%= @cabin.description %></li>
           <li><i class="far fa-money-bill-alt"></i> <%= @cabin.price_per_night %>€/par nuit</li>
           <li><i class="fas fa-map-marked-alt"></i> <%= @cabin.localisation %></li>
-          <li><i class="far fa-money-bill-alt"></i> <%= @cabin.price_per_night %>€/par nuit</li>
           <li><i class="fas fa-bed"></i> <%= @cabin.beds %></li>
         </div>
-        <div class="d-flex flex-column position: sticky">
-          <label for="date_arrivee"><i class="fas fa-plane-arrival"></i> Arivée</label>
-          <input type="date" name="arrivée" id="date_arrivee">
-        </div>
-        <div class="d-flex flex-column">
-          <label for="date_depart"><i class="fas fa-plane-departure"></i> Départ</label>
-          <input type="date" name="départ" id="date_depart">
-        </div>
-        <button type="button" class="btn btn-success" style="margin: 20px auto">Réserver</button>
+       <%= render 'bookings/form', cabin: @cabin, booking: @booking%>
       </div>
     </div>
   </div>

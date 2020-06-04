@@ -18,6 +18,7 @@ class CabinsController < ApplicationController
 
   def show
     @cabin = Cabin.find(params[:id])
+    @booking = Booking.new
   end
 
   def create

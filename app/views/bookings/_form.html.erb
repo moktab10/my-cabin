@@ -1,0 +1,13 @@
+<div class="form-inputs">
+  <%= simple_form_for [@cabin, @booking] do |f| %>
+  <%= f.input :number_of_guests,
+  class: "form-control", placeholder: "Nombre de convives", label: false%>
+  <%= f.input :start_date,
+  autofocus: true,
+  input_html: { autocomplete: "start_date" }, class: "form-control datepicker", placeholder: "Date d'arrivée'", label: false%>
+  <%= f.input :end_date,
+  autofocus: true,
+  input_html: { autocomplete: "end_date" }, class: "form-control datepicker", placeholder: "Date de départ", label: false%>
+  <%= f.button :submit, "Réserver", class: "btn btn-success submit" %>
+  <% end %>
+</div>

@@ -1,2 +1,51 @@
+<div id="map"
+     style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+ </div>
 
-<%= View de lindex booking %>
+<div class="container mt-5">
+  <h1>Mes bookings</h1>
+  <div class="cards">
+    <% @cabins.each do |cabin| %>
+    <div class="card-trip">
+      <div id="carouselExampleControls<%= cabin.id %>" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <%= link_to cabin_path(cabin), class: "index-link" do %>
+          <% cabin.photos.each do |photo| %>
+          <% if photo == cabin.photos.first %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, height: 220, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, height: 220, width: 350, crop: :fill, class: "d-block w-100" %>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls<%= cabin.id %>" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="card-trip-infos">
+        <div class="text-left">
+          <h4 id="green-title"><%= cabin.title.capitalize %></h4>
+          <h6><%= cabin.localisation %></h6>
+        </div>
+        <div class="price-bed">
+          <h6><%= cabin.beds %> x <i class="fas fa-bed"></i></h6>
+          <h6><%= booking.start_date --> booking.end_date %> € / <i class="fas fa-moon"></i></h6>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
