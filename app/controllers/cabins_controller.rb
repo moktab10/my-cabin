@@ -1,14 +1,18 @@
 class CabinsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @cabins = Cabin.geocoded
+    if params[:query].present?
+      @cabins = Cabin.geocoded.where("localisation ILIKE ?", "%#{params[:query]}%")
 
-    @markers = @cabins.map do |cabin|
-      {
-        lat: cabin.latitude,
-        lng: cabin.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
-      }
+      @markers = @cabins.map do |cabin|
+        {
+          lat: cabin.latitude,
+          lng: cabin.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
+        }
+      end
+    else
+      @cabins = Cabin.geocoded
     end
   end
 
