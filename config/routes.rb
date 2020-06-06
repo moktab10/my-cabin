@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :cabins, only: [:show] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show]
-
+  resources :bookings, only: [:show] do
+     patch '/accept', to: 'bookings#accept'
+     patch '/reject', to: 'bookings#reject'
+  end
 
   get '/dashboard', to: 'dashboards#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
