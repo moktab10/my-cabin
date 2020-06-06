@@ -11,8 +11,8 @@
 }
 
 .card-trip:hover {
-filter: contrast(95%);
--webkit-filter: contrast(95%);
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 
