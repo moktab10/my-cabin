@@ -33,8 +33,8 @@
       <div class="col-12 col-lg-6">
         <div class="text-center"><ul style="list-style-type: none" class="pl-0">
           <li><i class="fas fa-ellipsis-h"></i> <%= @cabin.description %></li>
-          <li><i class="far fa-money-bill-alt"></i> <%= @cabin.price_per_night %>€/par nuit</li>
           <li><i class="fas fa-map-marked-alt"></i> <%= @cabin.localisation %></li>
+          <li><i class="far fa-money-bill-alt"></i> <%= @cabin.price_per_night %>€/par nuit</li>
           <li><i class="fas fa-bed"></i> <%= @cabin.beds %></li>
         </div>
        <%= render 'bookings/form', cabin: @cabin, booking: @booking%>
