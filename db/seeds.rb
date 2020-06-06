@@ -26,7 +26,7 @@ cabine1 = Cabin.create!({
   beds: 6,
   user: user
 })
-file1 = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+file1 = URI.open('https://images.unsplash.com/photo-1516402707257-787c50fc3898?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
 cabine1.photos.attach(io: file1, filename: 'nes.png', content_type: 'image/png')
 
 cabine2 = Cabin.create!({
