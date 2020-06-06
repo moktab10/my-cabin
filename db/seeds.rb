@@ -18,6 +18,7 @@ user = User.create!({
   password: "testtest",
 })
 
+
 cabine1 = Cabin.create!({
   title: "La cabane de Magalie",
   localisation: "18 Rue Beautreillis, 75004 Paris, France",
@@ -28,6 +29,7 @@ cabine1 = Cabin.create!({
 })
 file1 = URI.open('https://images.unsplash.com/photo-1530596174357-c1c7ce516705?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
 cabine1.photos.attach(io: file1, filename: 'nes.png', content_type: 'image/png')
+
 
 cabine2 = Cabin.create!({
   title: "La cabane de Mokhtar",
@@ -52,7 +54,7 @@ file3 = URI.open('https://images.unsplash.com/photo-1445233233552-0d1470d31483?i
 cabine3.photos.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
 
 cabine4 = Cabin.create!({
-  title: "Le cabane perchée",
+  title: "La cabane de Magalie",
   localisation: "20 Rue Beautreillis, 75004 Paris, France",
   description: "the best spot in town",
   price_per_night: 215,
