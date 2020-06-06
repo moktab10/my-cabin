@@ -11,8 +11,8 @@
 }
 
 .card-trip:hover {
-filter: contrast(95%);
--webkit-filter: contrast(95%);
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 
@@ -66,3 +66,6 @@ filter: contrast(95%);
   font-weight: bold;
 }
 
+.container-cards {
+  margin-top: 400px;
+}
