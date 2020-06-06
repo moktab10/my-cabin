@@ -11,3 +11,4 @@ class Cabin < ApplicationRecord
   validates :price_per_night, presence: true
   validates :beds, presence: true
 end
+
