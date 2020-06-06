@@ -1,7 +1,26 @@
 <div class="container">
-  <h1>Mes cabines</h1>
-  <% @cabins.each do |cabin| %>
-    <%= cabin.title %>
-    <%= cabin.localisation %>
-  <% end %>
+  <div>
+    <h1>Mes cabanes</h1>
+  </div>
+  <div>
+    <% @cabins.each do |cabin| %>
+
+        <div class="my-cabin" style="margin: 20px auto">
+          <div class="d-flex flex-column">
+            <% if cabin.photos.first %>
+          <%= cl_image_tag cabin.photos.first.key, crop: :fit, class: "photo-cabin" %>
+            <% end %>
+            <ul style="list-style-type: none">
+
+              <li> <h2> <%= cabin.title %> </h2> </li>
+              <li> <i class="fas fa-map-marked-alt"></i> <%= cabin.localisation %> </li>
+              <li> <i class="fas fa-ellipsis-h"></i> <%= cabin.description %> </li>
+              <li> <i class="fas fa-bed"></i> <%= cabin.beds %> </li>
+              <li> <i class="far fa-money-bill-alt"></i> <%= cabin.price_per_night %> </li>
+            </ul>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
 </div>
